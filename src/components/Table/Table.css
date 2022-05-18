@@ -24,7 +24,7 @@ th {
 }
 
 @media screen and (max-width: 1200px) {
-  .Table {
+  .Table {  
     width: 170%;
     margin-top: 2rem;
   }

@@ -2,6 +2,7 @@ import './App.css'
 import MainDash from './components/MainDash/MainDash';
 import RightSide from './components/RigtSide/RightSide';
 import Sidebar from './components/Sidebar';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (

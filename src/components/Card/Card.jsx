@@ -35,16 +35,16 @@ function CompactCard({ param, setExpanded }) {
       onClick={setExpanded}
     >
       <div className="radialBar">
-        <CircularProgressbar
+        {/* <CircularProgressbar
           value={param.barValue}
           text={`${param.barValue}%`}
-        />
+        /> */}
         <span>{param.title}</span>
       </div>
       <div className="detail">
         <Png />
-        <span>${param.value}</span>
-        <span>Last 24 hours</span>
+        <span>{param.value}</span>
+        <span>il y a 15 mins</span>
       </div>
     </motion.div>
   );
@@ -119,7 +119,7 @@ function ExpandedCard({ param, setExpanded }) {
       <div className="chartContainer">
         <Chart options={data.options} series={param.series} type="area" />
       </div>
-      <span>Last 24 hours</span>
+      {/* <span>Last 24 hours</span> */}
     </motion.div>
   );
 }

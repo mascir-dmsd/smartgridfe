@@ -32,9 +32,9 @@ const Sidebar = () => {
       {/* logo */}
       <div className="logo">
         <img src={Logo} alt="logo" />
-        <span>
+        {/* <span>
           Sh<span>o</span>ps
-        </span>
+        </span> */}
       </div>
 
       <div className="menu">

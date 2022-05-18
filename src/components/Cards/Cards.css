@@ -1,11 +1,16 @@
 .Cards {
+  flex-direction: column;
   display: flex;
   gap: 10px;
 }
 .parentContainer{
   width: 100%;
 }
-
+.sCards{
+  flex-direction: row;
+  display: flex;
+  gap: 10px;
+}
 @media screen and (max-width: 1200px) {
   .Cards{
     flex-direction: column;
