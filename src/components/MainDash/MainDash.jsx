@@ -11,6 +11,8 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import "../Table/Table.css";
 import "./MainDash.css";
+import RightSide from '../RigtSide/RightSide';
+import Sidebar from '../Sidebar';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -85,57 +87,57 @@ const MainDash = () => {
     return <div>Chargement...</div>;
   } else {
     return (
-      <div className="MainDash">
-        <h3>{selected.node}</h3>
-        <Cards node={selected} />
-        <div className="Table">
-          {/* <h3>Noeuds</h3> */}
-          <TableContainer
-            component={Paper}
-            style={{
-              boxShadow: "0px 13px 20px 0px #80808029", height: "500px",
-              // overflow: "scroll",
-            }}
-          >
-            <Table stickyHeader aria-label="customized table" sx={{ minWidth: 650 }} >
-              <TableHead>
-                <TableRow>
-                  <StyledTableCell>Nom</StyledTableCell>
-                  <StyledTableCell align="left">ID</StyledTableCell>
-                  <StyledTableCell align="left">Dernière modification</StyledTableCell>
-                  <StyledTableCell align="left">Status</StyledTableCell>
-                  {/* <TableCell align="left"></TableCell> */}
-                </TableRow>
-              </TableHead>
-              <TableBody style={{ color: "white" }}>
-                {items.map((row) => (
-                  <StyledTableRow
-                    hover
-
-                    onClick={() => setSelected(row)}
-                    key={row.name}
-                    sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              <div className="MainDash">
+                <h3>{selected.node}</h3>
+                <Cards node={selected} />
+                <div className="Table">
+                  {/* <h3>Noeuds</h3> */}
+                  <TableContainer
+                    component={Paper}
+                    style={{
+                      boxShadow: "0px 13px 20px 0px #80808029", height: "500px",
+                      // overflow: "scroll",
+                    }}
                   >
-                    <TableCell component="th" scope="row">
-                      {row.name}
-                    </TableCell>
-                    <TableCell align="left">{row.node}</TableCell>
-                    <TableCell align="left">{new Date(row.updateAt).toLocaleDateString()} {new Date(row.updateAt).toLocaleTimeString()}</TableCell>
-                    <TableCell align="left">
-                      <span className="status" style={makeStyle(row.energie)}>{row.energie}</span>
-                    </TableCell>
-                    {/* <TableCell align="left" className="Details"> <Button variant="link" onClick={handleShow}>Details
-                </Button></TableCell> */}
-                  </StyledTableRow>
+                    <Table stickyHeader aria-label="customized table" sx={{ minWidth: 650 }} >
+                      <TableHead>
+                        <TableRow>
+                          <StyledTableCell>Nom</StyledTableCell>
+                          <StyledTableCell align="left">ID</StyledTableCell>
+                          <StyledTableCell align="left">Dernière modification</StyledTableCell>
+                          <StyledTableCell align="left">Status</StyledTableCell>
+                          {/* <TableCell align="left"></TableCell> */}
+                        </TableRow>
+                      </TableHead>
+                      <TableBody style={{ color: "white" }}>
+                        {items.map((row) => (
+                          <StyledTableRow
+                            hover
 
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
+                            onClick={() => setSelected(row)}
+                            key={row.name}
+                            sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                          >
+                            <TableCell component="th" scope="row">
+                              {row.name}
+                            </TableCell>
+                            <TableCell align="left">{row.node}</TableCell>
+                            <TableCell align="left">{new Date(row.updateAt).toLocaleDateString()} {new Date(row.updateAt).toLocaleTimeString()}</TableCell>
+                            <TableCell align="left">
+                              <span className="status" style={makeStyle(row.energie)}>{row.energie}</span>
+                            </TableCell>
+                            {/* <TableCell align="left" className="Details"> <Button variant="link" onClick={handleShow}>Details
+                        </Button></TableCell> */}
+                          </StyledTableRow>
 
-        </div>
-        {/* <Table nodes={items} /> */}
-      </div>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
+
+                </div>
+                {/* <Table nodes={items} /> */}
+              </div>
     );
   }
 };
