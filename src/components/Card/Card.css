@@ -93,6 +93,9 @@
     height: 45vh;
     left: 6rem;
   }
+  .CompactCard{
+    height: 5rem !important;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -101,5 +104,8 @@
     height: 50%;
     left: 25px;
     width: 80%;
+  }
+  .CompactCard{
+    height: 4rem !important;
   }
 }
